@@ -1,15 +1,16 @@
 machine:
   python:
     version: 3.6.1
-checkut:
+checkout:
   post:
     - cd /home/ubuntu/python-hello-world/src
+    - pip install -r src/requirements.txt
 
 test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit
     - /home/ubuntu/virtualenvs/venv-3.6.1/bin/pip install coverage
-    - /home/ubuntu/virtualenvs/venv-3.4.3/bin/nosetests --with-xunit --with-coverage --cover-html --cover-package='src.hello'
+    - /home/ubuntu/virtualenvs/venv-3.6.1/bin/nosetests --with-xunit --with-coverage --cover-html --cover-package='src.hello'
     - mv /home/ubuntu/python-hello-world/nosetests.xml $CIRCLE_TEST_REPORTS/junit/nosetests.xm.
   post:
     - mkdir -p $CIRCLE_ARTIFACTS/python-hello-world-coverage
