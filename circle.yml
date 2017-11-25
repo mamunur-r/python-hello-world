@@ -12,5 +12,5 @@ test:
     - /home/ubuntu/virtualenvs/venv-3.6.1/bin/nosetests --with-xunit --with-coverage --cover-html --cover-package='src.hello'
     - mv /home/ubuntu/python-hello-world/nosetests.xml  $CIRCLE_TEST_REPORTS/junit/nosetests.xml
   post:
-    - mkdir -p $CIRCLE_ARTIFACTS/pylastic-coverage
+    - mkdir -p $CIRCLE_ARTIFACTS/python-hello-world-coverage
     - mv /home/ubuntu/python-hello-world/cover  $CIRCLE_ARTIFACTS/python-hello-world-coverage
