@@ -10,7 +10,7 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit
     - /home/ubuntu/virtualenvs/venv-3.6.1/bin/pip install coverage
     - /home/ubuntu/virtualenvs/venv-3.6.1/bin/nosetests --with-xunit --with-coverage --cover-html --cover-package='src.hello'
-    - mv /home/ubuntu/pylastic/nosetests.xml  $CIRCLE_TEST_REPORTS/junit/nosetests.xml
+    - mv /home/ubuntu/python-hello-world/nosetests.xml  $CIRCLE_TEST_REPORTS/junit/nosetests.xml
   post:
     - mkdir -p $CIRCLE_ARTIFACTS/pylastic-coverage
-    - mv /home/ubuntu/pylastic/cover  $CIRCLE_ARTIFACTS/pylastic-coverage
+    - mv /home/ubuntu/python-hello-world/cover  $CIRCLE_ARTIFACTS/python-hello-world-coverage
