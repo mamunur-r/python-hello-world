@@ -18,7 +18,5 @@ class HelloTest(unittest.TestCase):
 
         self.assertEqual(response,'You said Hello to me!')
 
-    def test_sum(self):
-        result = self.hw.sum(5, 10)
-        self.assertEqual(result, 15)
+
 
